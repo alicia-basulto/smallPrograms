@@ -80,7 +80,6 @@ def hangman():
     WORDS = response.content.splitlines()
     word_selected = str(random.choice(WORDS))
     word_selected = word_selected.replace("b'", "").replace("'","")
-    print(word_selected)
 
 
     for n in word_selected:
@@ -89,10 +88,10 @@ def hangman():
 
 
     while result.find("_") !=-1:
-        letter = input("\nIntroduce a letter: ")
-        if letter.lower() in word_selected.lower():
+        letter = input("\nIntroduce a letter: ").lower()
+        if letter in word_selected:
             for index in range(len(word_selected)):
-                if word_selected[index] == letter:
+                if word_selected[index].lower() == letter:
                     result = result[:index] + word_selected[index] + result[index + 1:]
             print(result)
         else:

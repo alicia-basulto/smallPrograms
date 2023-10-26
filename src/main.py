@@ -2,7 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-from src import gameRockPaperScissors, passwordGenerator, hangmanGame
+from src import gameRockPaperScissors, passwordGenerator, hangmanGame, caesarCipher
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     def menu_principal():
@@ -10,6 +10,7 @@ if __name__ == '__main__':
         print("1. Game Rock, Paper, Scissors")
         print("2. Password Generator")
         print("3. Hangman Game")
+        print("4. Caesar Cypher")
 
         option = int(input("Seleccione una opción: "))
 
@@ -19,6 +20,8 @@ if __name__ == '__main__':
             passwordGenerator.generator()
         elif option == 3:
             hangmanGame.hangman()
+        elif option == 4:
+            caesarCipher.cipher()
         else:
             print("Invalid option")
 
